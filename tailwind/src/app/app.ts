@@ -15,7 +15,7 @@ export class App {
 
   onClickMe(){
     console.log("Button has been click!");
-    this.num = this.num+1;
+    this.num += 1;
   }
 
   onClickNot(){
