@@ -1,0 +1,112 @@
+<p>control-flow works!</p>
+
+<div class="row">
+    <div class="col-3">
+        <select [(ngModel)]="selectedCaste" class="form-select">
+            <option>ABC Caste</option>
+            <option>XYZ Caste</option>
+            <option>PQR Caste</option>
+            <option>Other</option>
+
+        </select>
+    </div>
+    <div class="col-3">
+       
+        @if(selectedCaste=="Other"){
+            <input type="text" placeholder="Enter Caste" class="form-control">
+        }
+        @else if (selectedCaste=="PQR Caste") {
+            <Span>PQR</Span>
+        }
+        @else if (selectedCaste=="XYZ Caste") {
+            <Span>XYZ</Span>
+        }
+        @else if (selectedCaste=="ABC Caste") {
+            <Span>ABC</Span>
+        }
+        @else{
+             <span>Select Caste</span>
+        }
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-4">
+        @if(isStudentActive()==true){
+            <h3 class="text-success">Student is Active</h3>
+        }
+        @else {
+            <h3 class="text-danger">Stuent is Not Active</h3>
+        }
+    </div>
+    <br><br>
+    <div class="col-">
+        <button class="btn btn-success" (click)="changeStatus(true)">Make Active</button> &nbsp;
+        <button class="btn btn-danger" (click)="changeStatus(false)">Make De-Active</button>
+
+    </div>
+</div>
+
+<br><br>
+
+<div class="row">
+    <div class="col-2">
+        <ul>
+        @for(item of cityList; track $index){
+            <li>{{item}}</li>
+        }
+        </ul>
+    </div>
+    <div class="col-2">
+        <ol>
+            @for(item of cityList; track $index){
+                <li>
+                    {{item}}
+                </li>
+            }
+        </ol>
+    </div>
+</div>
+
+<br><br>
+
+<div class="row">
+    <div class="col-4">
+        <table class="table">
+            <thead class="table-active">
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(item of studentList; track $index){
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.city}}</td>
+                        <!-- @if(item.status == true){
+                            <td class="text-success">{{item.status}}</td>
+                        }
+                        @else{
+                            <td class="text-danger">{{item.status}}</td>
+                        } -->
+                        <td>
+                        {{item.status ? 'Active':'De-Active'}}
+                        <!-- @if(item.status == true){
+                            <h6 class="text-success">Active</h6>
+                        }
+                        @else {
+                            <h6 class="text-danger">De-Active</h6>
+                        } -->
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

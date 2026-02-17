@@ -1,0 +1,7 @@
+.primary{
+    background-color: burlywood;
+}
+
+.primary:hover{
+    background-color: red;
+}

@@ -1,0 +1,50 @@
+<p>data-binding works!</p>
+
+<table>
+    <tr>
+        <td>Course Name 📖 :</td>
+        <td><input type="text" value="{{courseName}}"></td>
+    </tr>
+    <tr>
+        <td>Roll No. ✒️:</td>
+        <td>{{rollNo}}</td>
+    </tr>
+    <tr>
+        <td>Enrolled 📙:</td>
+        <td>{{isEnrolled}}</td>
+    </tr>
+    <tr>
+        <td>Course Expiry ⏰ : </td>
+        <td><input type="text" [value]="courseExpiry" [minLength]="minTestLength"></td>
+    </tr>
+
+</table>
+
+<span [class]="spanClassName">{{rollNo}}</span> 
+
+<table>
+    <tr>
+        <!-- if we change the value here it will get change everywhere iti is used -->
+        <td><input type="text" [(ngModel)]="rollNo"></td>
+    </tr>
+    <tr>
+        <input type="checkbox" [(ngModel)]="isEnrolled">
+    </tr>
+</table>
+
+<br>
+<hr>
+
+<table style="background-color: aqua;" (mouseenter)="onMouseEnter()">
+    <tr>
+        <td><button (click)="showAlert('Krishna')">Show Alert</button></td>
+        <td>
+            <select (change)="onCityChanged()">
+                <option value="Nagpur">Nagpur</option>
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+            </select>
+        </td>
+    </tr>
+
+</table>

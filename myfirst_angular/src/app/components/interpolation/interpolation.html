@@ -1,0 +1,49 @@
+<div style="padding: 30px; font-family: Arial, Helvetica, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.1); background-color: #fff; justify-content: center; align-items: center; margin-top: 5%;">
+    <h2 style="text-align: center; margin-bottom: 20px; border-bottom: 2px solid #000; padding-bottom: 10px; ;">
+        Invoice - Order Summary
+    </h2>
+
+    <table style="border-collapse: collapse; width: 100%; font-size: 14px;">
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Customer Name</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{customerName}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Order ID</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{orderId}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Product Name</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{productName}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Price</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">₹{{price}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Quantity</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{quantity}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Total Amount</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{'₹ '+ price * quantity}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Membership</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{isPremiumCustomer ? 'Premium Customer (30% Discount Applied)' : 'Regular Customer (No Discount)'}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Payment Status</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{isPaymentDone? 'Payment Sucessful' : 'Payment Pending'}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Final Payable Amount</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{'₹ '+getFinalAmount()}}</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Order Status Message</th>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{{getOrderStatusMessage()}}</td>
+        </tr>
+
+    </table>
+</div>

@@ -1,0 +1,26 @@
+<p>signal works!</p>
+
+<p> {{courseName}} = {{angularVersion()}}</p>
+<p>Course Duration: {{courseDuration()}}</p>
+
+<button (click)="changeDuration()">Click Me</button>
+<br><br>
+
+{{cityList()}}
+
+<br><br>
+
+<button (click)="addCity('Nagpur')">Add Nagpur</button>
+<button (click)="addCity('Gujrat')">Add Gujrat</button>
+<button (click)="addCity('Delhi')">Add Delhi</button>
+
+<br><br>
+
+{{studentObj().Name}} -- {{studentObj().City}}
+
+
+<br><br>
+
+{{newObj().name}} -- {{newObj().class}}
+
+<button (click)="changeCity()">Change City</button>

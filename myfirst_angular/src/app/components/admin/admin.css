@@ -1,0 +1,7 @@
+.primary{
+    background-color: aqua;
+}
+
+.primary:hover{
+    background-color: red;
+}
