@@ -1,15 +1,17 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Admin } from "./components/admin/admin";
+import { AttributeBinding } from "./components/attribute-binding/attribute-binding";
 import { ControlFlow } from "./components/control-flow/control-flow";
 import { DataBinding } from "./components/data-binding/data-binding";
 import { Interpolation } from "./components/interpolation/interpolation";
+import { PropertyBinding } from "./components/property-binding/property-binding";
 import { Signal } from "./components/signal/signal";
 import { User } from "./components/user/user";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Admin, User, DataBinding, Signal, ControlFlow, Interpolation],
+  imports: [RouterOutlet, Admin, User, DataBinding, Signal, ControlFlow, Interpolation, PropertyBinding, AttributeBinding],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
