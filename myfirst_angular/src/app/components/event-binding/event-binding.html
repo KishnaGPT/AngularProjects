@@ -1,1 +1,130 @@
-<p>event-binding works!</p>
+<div class="page">
+    <h2>Order Summary (Event Binding)</h2>
+
+    <!-- 1. Interpolation -->
+    <div class="card">
+
+        <div class="row"><b>Customer: </b>{{customerName}}</div>
+        <div class="row"><b>Oreder ID: </b>{{orderId}}</div>
+        <div class="row"><b>Product: </b>{{productName}}</div>
+
+
+        <hr>
+
+        <!--2. class Binding -->
+
+        <div class="row">
+            <b>Payment Status: </b>
+            <span class="badge" [class.paid]="isPaymentDone" [class.pending]="!isPaymentDone">
+                {{getPaymentLabel()}}
+            </span>
+
+
+            <div class="row">
+                <b>Membership:</b>
+                <span class="badge" [class.premium]="isPremiumCustomer" [class.regular]="!isPremiumCustomer">
+                    {{getMembershipLabel()}}
+                </span>
+            </div>
+
+            <!-- Event Binding -->
+
+            <button type="button" (click)="toggleMembership()" style="margin-left: 10px; padding: 12px;">
+                Change Membership
+            </button>
+
+        </div>
+
+        <div class="row">
+            <b>Stock Left: </b>
+            <span [class.low-stock]="stockLeft<=5">
+                {{stockLeft}}
+            </span>
+        </div>
+
+        <hr>
+
+        <!-- property and event binding -->
+
+        <div class="row">
+            <b>Quantity: </b>
+            <button type="button" [disabled]="quantity<=1" (click)="decreaseQuantity()">
+                -
+            </button>
+
+            <input type="text" [value]="quantity" (input)="onQuantityInput($event)" style="width: 60px; margin: 0 6px">
+
+            <button type="button" [disabled]="quantity>=10" ; (click)="increaseQuantity()">
+                +
+            </button>
+
+            <span style="margin-left: 10px;">
+                <b>Total: </b>₹{{ price * quantity }}
+            </span>
+
+        </div>
+
+        <!-- Event Binding / apply when enter pressed-->
+
+        <div class="row">
+            <b>Coupon: </b>
+            <input type="text" [value]="couponCode" (input)="onCouponInput($event)" (keyup.enter)="applyCoupon()"
+                style="margin-left: 6px; width: 150px;">
+            <button type="button" (click)="applyCoupon()" style="margin-left: 6px;">
+                Apply
+            </button>
+        </div>
+
+        <div class="row">
+            <b>Shipping: </b>
+            <select [value]="shippingOption" (change)="onShippingChange($event)" style="margin-left: 6px;">
+                <option value="Standard">Standard</option>
+                <option value="Express">Express</option>
+                <option value="NextDay">Next Day</option>
+            </select>
+        </div>
+
+
+        <!-- Style binding -->
+        <div class="row">
+            <b>Delivery Progress: </b>
+            <span>{{deliveryProgressPercent}}</span>
+
+            <span class="progress-box">
+                <span class="progress-fill" [style.width.%]="deliveryProgressPercent">
+                </span>
+            </span>
+        </div>
+
+        <div class="row">
+            <b>Final Payable: </b>₹{{ getFinalPayable() }}
+        </div>
+
+        <hr>
+
+        <!-- Event and propery binding -->
+
+        <div class="row">
+            <button type="button" (click)="payNow()" [disabled]="isPaymentDone">
+                Pay Now
+            </button>
+
+
+            <span [style.marginLeft.px]="10" [style.opacity]="isPaymentDone? 1 : 0.7">
+                (After payment you can place order)
+            </span>
+        </div>
+
+        <form class="row" (submit)="placeOrder($event)">
+            <button type="submit" [disabled]="!isPaymentDone">Place Order</button>
+
+            <span [style.marginLeft.px]="10" [style.opacity]="isPaymentDone ? 1 : 0.5"
+                [style.pointerEvents]="isPaymentDone ? 'auto' : 'none'">
+                (Order submission enabled after payment)
+            </span>
+        </form>
+
+        <div class="message">{{ uiMessage }}</div>
+
+    </div>
+</div>

@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { Navbar } from "./navbar/navbar";
 import { FormsModule } from "@angular/forms";
-import { LocationUpgradeModule } from '@angular/common/upgrade';
+import { Navbar } from "./navbar/navbar";
 
 @Component({
   selector: 'app-root',
@@ -16,6 +15,7 @@ export class App {
     // console.log(event); //give object
     console.log(event.data) //give data 
   }
+  
 
   name = '';
 

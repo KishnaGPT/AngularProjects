@@ -1,0 +1,108 @@
+<h2>Angular Event Binding Demo</h2>
+
+<!-- input events -->
+
+<label>Type your name: </label>
+<input type="text" (input)="onInput($event)">
+<p>Live Value: {{liveValue}}</p>
+
+<!-- change events -->
+<label>Change event example: </label>
+<input type="text" (change)="onChange($event)">
+<p>Changed Value: {{changedValue}}</p>
+
+<!-- keyUp event -->
+<label>Key Up event: </label>
+<input type="text" (keyup)="onKeyUp($event)">
+<p>Last Key Pressed: {{lastKey}}</p>
+
+<hr>
+
+<!-- Focus and blur -->
+<label>Focus / Blur example</label>
+<input type="text" (focus)="onFocus()" (blur)="onBlur()">
+<p>Status: {{focusStatus}}</p>
+
+
+<!-- Click event -->
+<button (click)="onClick()">Click Me</button>
+<p>{{clickMessage}}</p>
+
+<hr>
+
+<h3>1. Text Input</h3>
+<input type="text" (input)="onTextInput($event)">
+<p>Text Value: {{ textValue }}</p>
+
+<hr>
+
+<h3>2. Password Input</h3>
+<input type="password" (input)="onPasswordInput($event)">
+<p>Password Length: {{ passwordLength }}</p>
+
+<hr>
+
+<h3>3. Email Input</h3>
+<input type="email" (blur)="onEmailBlur($event)">
+<p>Email Entered: {{ emailValue }}</p>
+
+<hr>
+
+<h3>4. Number Input</h3>
+<input type="number" (change)="onNumberChange($event)">
+<p>Number Value: {{ numberValue }}</p>
+
+<hr>
+
+<h3>5. Checkbox</h3>
+<input type="checkbox" (change)="onCheckboxChange($event)">
+<p>Checked: {{ isChecked }}</p>
+
+<hr>
+
+<h3>6. Radio Buttons</h3>
+<input type="radio" name="gender" value="Male" (change)="onRadioChange($event)"> Male
+<input type="radio" name="gender" value="Female" (change)="onRadioChange($event)"> Female
+<p>Selected Gender: {{ selectedGender }}</p>
+
+<hr>
+
+<h3>7. File Upload</h3>
+<input type="file" (change)="onFileChange($event)">
+<p>Selected File: {{ fileName }}</p>
+
+<hr>
+
+<h3>8. Range Slider</h3>
+<input type="range" min="0" max="100" (input)="onRangeChange($event)">
+<p>Range Value: {{ rangeValue }}</p>
+
+<hr>
+
+<h3>9. Date Input</h3>
+<input type="date" (change)="onDateChange($event)">
+<p>Selected Date: {{ selectedDate }}</p>
+
+<hr>
+
+<h3>10. Color Picker</h3>
+<input type="color" (input)="onColorChange($event)">
+<p>Selected Color: {{ selectedColor }}</p>
+<div [style.background]="selectedColor" style="width:100px;height:30px;"></div>
+
+<hr>
+
+<h3>11. Select Dropdown</h3>
+<select (change)="onSelectChange($event)">
+  <option value="">Select City</option>
+  <option value="Delhi">Delhi</option>
+  <option value="Mumbai">Mumbai</option>
+  <option value="Chennai">Chennai</option>
+</select>
+<p>Selected City: {{ selectedCity }}</p>
+
+<hr>
+
+<h3>12. Textarea</h3>
+<textarea (input)="onTextareaInput($event)"></textarea>
+<p>Textarea Content: {{ textareaValue }}</p>
