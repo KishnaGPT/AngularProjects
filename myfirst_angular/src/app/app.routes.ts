@@ -12,6 +12,7 @@ import { User } from './components/user/user';
 import { KeyboardEventComponent } from './components/keyboard-event/keyboard-event';
 import { MouseEventComponent } from './components/mouse-event/mouse-event';
 import { NotFound } from './components/not-found/not-found';
+import { StudentList } from './studentDashboard/student-list/student-list';
 
 
 export const routes: Routes = [
@@ -67,6 +68,10 @@ export const routes: Routes = [
     {
         path: "user",
         component: User
+    },
+    {
+        path: 'studentdashboard',
+        component: StudentList
     },
     {
         path: "**",
