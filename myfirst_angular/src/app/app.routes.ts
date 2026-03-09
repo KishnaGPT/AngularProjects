@@ -11,6 +11,7 @@ import { TwoWayBinding } from './components/two-way-binding/two-way-binding';
 import { User } from './components/user/user';
 import { KeyboardEventComponent } from './components/keyboard-event/keyboard-event';
 import { MouseEventComponent } from './components/mouse-event/mouse-event';
+import { NotFound } from './components/not-found/not-found';
 
 
 export const routes: Routes = [
@@ -66,7 +67,12 @@ export const routes: Routes = [
     {
         path: "user",
         component: User
+    },
+    {
+        path: "**",
+        component: NotFound
     }
+
     
     
 
