@@ -32,4 +32,59 @@
 
 <!-- <app-two-way-binding></app-two-way-binding> -->
 
-<app-student-list></app-student-list>
+<!-- <app-student-list></app-student-list> -->
+
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Angular</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/admin" >Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/interpolation" >Interpolation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLinkActive="active" routerLink="/controlflow" >Control-Flow</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLinkActive="active" routerLink="/signal" >Signal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLinkActive="active" routerLink="/user" >User</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Binding
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/attributebinding">Attribute-Binding</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/databinding" >Data Binding</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/propertybinding">Property Binding</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/twowaybinding">Two-Way Binding</a></li>
+          </ul>
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Events
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/eventbinding">Event-Binding</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/mouseevent" >Mouse</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/keyboardevent">Key</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>

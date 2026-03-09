@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { Admin } from "./components/admin/admin";
 import { AttributeBinding } from "./components/attribute-binding/attribute-binding";
 import { ControlFlow } from "./components/control-flow/control-flow";
@@ -16,7 +16,7 @@ import { StudentList } from "./studentDashboard/student-list/student-list";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Admin, User, DataBinding, Signal, ControlFlow, Interpolation, PropertyBinding, AttributeBinding, EventBinding, KeyboardEventComponent, MouseEventComponent, TwoWayBinding, StudentList],
+  imports: [RouterOutlet, Admin, User, DataBinding, Signal, ControlFlow, Interpolation, PropertyBinding, AttributeBinding, EventBinding, KeyboardEventComponent, MouseEventComponent, TwoWayBinding, StudentList, RouterLinkActive, RouterLinkWithHref],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
