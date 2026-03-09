@@ -1,0 +1,36 @@
+
+Enter Password: <input  type="password" placeholder="********" (keyup.enter)="login()"/>
+
+<hr>
+
+<!-- search must trigger when keyup -->
+Search: <input type="text" placeholder="start searching..." (keyup)="searchProduct($event)"/>
+<p>
+    @if (searchText) {
+        Searching for: {{searchText}}
+    }
+</p>
+
+<hr>
+
+Enter Name: <input type="text" placeholder="Enter Name" (keydown)="preventNumbers($event)">
+
+<hr>
+
+Enter Phone: <input type="text" placeholder="9536478120" (keydown)="preventAlpha($event)">
+
+<hr>
+
+<div 
+    tabindex="0"
+    (keydown)="moveBox($event)" 
+    [style.transform]="'translate(' + x + 'px,' + y + 'px)'"
+    style="width: 200px; height: 200px; border:1px solid; text-align: center; justify-content: center; align-content: center;">
+    Tap Me & Use Arrow Keys To Move
+
+</div>
+
+<p>Postion= X={{x}}, Y={{y}}</p>
+
+
+

@@ -1,0 +1,19 @@
+<!-- Child Compoenet -->
+
+<!-- this shows the radio button male, female, all followed by the count -->
+<span class="radioClass">Show: </span>
+
+<label class="radioClass">
+    <input type="radio" name="options" [checked]="selected==='All'" (change)="onSelectionChange('All')"/>
+    {{"All(" + all +")"}} 
+</label>
+
+<label class="radioClass">
+    <input type="radio" name="options" [checked]="selected==='Male'" (change)="onSelectionChange('Male')"/>
+    {{"Male(" + male + ")"}}
+</label>
+
+<label class="radioClass">
+    <input type="radio" name="options" [checked]="selected==='Female'" (change)="onSelectionChange('Female')"/>
+    {{"Female(" + female + ")"}}
+</label>

@@ -1,0 +1,12 @@
+<div style="width: 200px; height: 200px; border: 2px solid black; position: absolute; cursor: grab; margin: 20px;"
+    (mousedown)="startDrag($event)"
+    (mousemove)="onDrag($event)"
+    (mouseup)="stopDrag()"
+    [style.left.px]="x"
+    [style.top.px]="y"
+>
+    Drag me!
+</div>
+
+
+<p>Postion: X={{x}} Y={{y}}</p>

@@ -9,10 +9,14 @@ import { Interpolation } from "./components/interpolation/interpolation";
 import { PropertyBinding } from "./components/property-binding/property-binding";
 import { Signal } from "./components/signal/signal";
 import { User } from "./components/user/user";
+import {  KeyboardEventComponent } from "./components/keyboard-event/keyboard-event";
+import { MouseEventComponent } from "./components/mouse-event/mouse-event";
+import { TwoWayBinding } from "./components/two-way-binding/two-way-binding";
+import { StudentList } from "./studentDashboard/student-list/student-list";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Admin, User, DataBinding, Signal, ControlFlow, Interpolation, PropertyBinding, AttributeBinding, EventBinding],
+  imports: [RouterOutlet, Admin, User, DataBinding, Signal, ControlFlow, Interpolation, PropertyBinding, AttributeBinding, EventBinding, KeyboardEventComponent, MouseEventComponent, TwoWayBinding, StudentList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

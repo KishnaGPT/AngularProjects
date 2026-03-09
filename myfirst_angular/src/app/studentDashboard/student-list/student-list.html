@@ -1,0 +1,39 @@
+<app-student-count 
+    [all]="totalCount" 
+    [male]="MaleCount" 
+    [female]="FemaleCount" 
+    [selected]="selectedFilter" 
+    (selectedChanged)="onFilterChanged($event)">
+</app-student-count>
+
+<br><br>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <td>Name</td>
+            <td>Gender</td>
+            <th>DOB</th>
+            <th>Course Fee</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(filteredStudents.length>0){
+            @for(student of filteredStudents; track trackById($index, student)){
+                <tr>
+                    <td>{{student.ID}}</td>
+                    <td>{{student.FirstName}} {{student.LastName}}</td>
+                    <td>{{student.Gender}}</td>
+                    <td>{{formatDob(student.DOB)}}</td>
+                    <td>{{student.CourseFee}}</td>
+                </tr>
+            }
+        }
+        @else {
+            <tr>
+                <td colspan="5"> No Student to display</td>
+            </tr>
+        }
+    </tbody>
+</table>
