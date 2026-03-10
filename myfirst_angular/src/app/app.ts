@@ -16,7 +16,7 @@ import { StudentList } from "./studentDashboard/student-list/student-list";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Admin, User, DataBinding, Signal, ControlFlow, Interpolation, PropertyBinding, AttributeBinding, EventBinding, KeyboardEventComponent, MouseEventComponent, TwoWayBinding, StudentList, RouterLinkActive, RouterLinkWithHref],
+  imports: [RouterOutlet, RouterLinkActive, RouterLinkWithHref],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

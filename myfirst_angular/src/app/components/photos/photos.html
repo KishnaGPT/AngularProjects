@@ -1,0 +1,103 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card " style="max-width:none;">
+            <div class="card-header bg-warning">
+                Photos List
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="text-center ">
+                            <th>Sr No</th>
+                            <th>Title</th>
+                            <th>Url</th>
+                            <!-- <th>Thumbnail</th> -->
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(item of photoList; track $index){
+                        <tr>
+                            <td>{{$index+1}}</td>
+                            <td>{{item.title}}</td>
+                            <td>{{item.url}}</td>
+                            <!-- <td>{{item.thumbnailUrl}}</td> -->
+                            <td>
+                                <!-- sending item that want to edit -->
+                                <button class="btn btn-sm btn-warning" (click)="onEdit(item)"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
+                                        viewBox="0 0 16 16">  
+                                        <path
+                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd"
+                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                    </svg></button>
+                                <br>
+                                <button class="btn btn-sm btn-danger" (click)="onDelete(item.id)" ><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                        <path
+                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                    </svg></button>
+                            </td>
+
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-warning">
+                Photos List
+            </div>
+            <div class="card-body">
+                <form>
+                    --{{newPhoto.id}} <!--this will display the id of selected photo if not selected then it will be zero-->
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Album Id</label>
+                            <input type="text" class="form-control" name="albumId" [(ngModel)]="newPhoto.albumId">
+                        </div>
+                        <div class="col-12">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" [(ngModel)]="newPhoto.title">
+                        </div>
+                        <div class="col-12">
+                            <label>Url</label>
+                            <input type="text" class="form-control" name="url" [(ngModel)]="newPhoto.url">
+                            <!-- whenever using ngmodel in forms must use name attribute -->
+                        </div>
+                        <div class="col-12">
+                            <label>Thumbnail</label>
+                            <input type="text" class="form-control" name="thumbnailUrl"
+                                [(ngModel)]="newPhoto.thumbnailUrl">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 text-center">
+                            <button class="btn btn-secondary">Reset</button>
+                        </div>
+                        @if(newPhoto.id==0){
+                            <div class="col-6 text-center">
+                                <button class="btn btn-success" (click)="onSavePhoto()">Save</button>
+                            </div>
+
+                        }
+                        @else {
+                            <div class="col-6 text-center">
+                                <button class="btn btn-warning" (click)="onUpdatePhoto()">Update</button>
+                            </div>
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,7 @@ import { KeyboardEventComponent } from './components/keyboard-event/keyboard-eve
 import { MouseEventComponent } from './components/mouse-event/mouse-event';
 import { NotFound } from './components/not-found/not-found';
 import { StudentList } from './studentDashboard/student-list/student-list';
+import { Photos } from './components/photos/photos';
 
 
 export const routes: Routes = [
@@ -73,6 +74,17 @@ export const routes: Routes = [
         path: 'studentdashboard',
         component: StudentList
     },
+    {
+        path: 'photos',
+        component: Photos
+    },
+
+
+
+
+
+
+
     {
         path: "**",
         component: NotFound
